@@ -7,6 +7,7 @@
 - [LeRobot 策略源码](src/lerobot/policies) 包含策略实现、配置和数据处理模块。
 - [OpenPI](openpi) 包含 π0 系列模型、训练和推理代码。
 - [LingBot-VA](lingbot-va) 包含模型、服务端和评估代码。
+- [HiddenPhys-ACT](hiddenphys-act) 包含 ACT、π0 LoRA 和回放分析的实验源码。
 
 | 策略源码 | 路径 |
 | --- | --- |
@@ -19,11 +20,14 @@
 
 ## LeRobot 服务器环境
 
-[requirements-server.txt](requirements-server.txt) 记录服务器 lepi 环境中的实际安装版本。环境使用 Linux x86_64、Python 3.12.13 和 CUDA 12.8 运行时依赖。创建对应的 Python 环境后，在仓库根目录执行：
+| 环境 | Python | 依赖清单 |
+| --- | --- | --- |
+| lepi | 3.12.13 | [requirements-server.txt](requirements-server.txt) |
+| lerobot | 3.12.0 | [requirements-lerobot.txt](requirements-lerobot.txt) |
 
-    python -m pip install -r requirements-server.txt
+两份清单均来自 Linux x86_64 的实际 Python 安装环境，包含 CUDA 12.8 运行时包。创建对应的 Python 环境后，从仓库根目录安装所选清单。GPU 驱动、FFmpeg 和硬件依赖按平台配置。
 
-清单记录 Python 包及版本。GPU 驱动、FFmpeg 和硬件依赖按所用平台配置。
+    python -m pip install -r requirements-lerobot.txt
 
 源码基于本地 LeRobot 工作区的提交 e64fa667。保留 [LeRobot Apache-2.0 许可](LICENSE) 和 [LeWorldModel MIT 许可](src/lerobot/policies/le-wm-main/LICENSE)。各策略使用的预训练权重和数据可按各自上游项目的说明获取。
 

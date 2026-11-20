@@ -1,0 +1,25 @@
+# Local experiment data and environment
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+sim_packages/
+wheels/
+demos/
+downloads/
+runs/
+logs/
+raw/
+lerobot-data/
+arrow-cache/
+incomplete-data.*/
+eval_*/
+checkpoints/
+pi0-lora-peg/assets/
+*.npz
+*.pt
+*.pth
+*.safetensors
+*.jsonl
+*.mp4
