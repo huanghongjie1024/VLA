@@ -1,0 +1,18 @@
+
+# Local model and evaluation artifacts
+.env
+.env.*
+.venv/
+checkpoints/
+weights/
+data/
+datasets/
+outputs/
+logs/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.parquet
+*.arrow
+*.jsonl

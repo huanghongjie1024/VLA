@@ -2,6 +2,12 @@
 
 基于 [Hugging Face LeRobot](https://github.com/huggingface/lerobot) 的机器人策略源码快照。主要入口在 [src/lerobot/policies](src/lerobot/policies)，模型目录包含实现、配置和数据处理模块。
 
+## 项目源码
+
+- [LeRobot 策略源码](src/lerobot/policies) 包含策略实现、配置和数据处理模块。
+- [OpenPI](openpi) 包含 π0 系列模型、训练和推理代码。
+- [LingBot-VA](lingbot-va) 包含模型、服务端和评估代码。
+
 | 策略源码 | 路径 |
 | --- | --- |
 | ACT、ACT-TTT 与 ACT-JEPA 系列 | [act](src/lerobot/policies/act)、[act_ttt](src/lerobot/policies/act_ttt)、[act_jepa](src/lerobot/policies/act_jepa) |
@@ -10,6 +16,14 @@
 | π0、π0.5、SmolVLA 等上游策略 | [pi0](src/lerobot/policies/pi0)、[pi05](src/lerobot/policies/pi05)、[smolvla](src/lerobot/policies/smolvla) |
 
 训练参数和依赖由 [pyproject.toml](pyproject.toml) 与 [src/lerobot/configs](src/lerobot/configs) 定义。策略注册入口是 [factory.py](src/lerobot/policies/factory.py)。
+
+## LeRobot 服务器环境
+
+[requirements-server.txt](requirements-server.txt) 记录服务器 lepi 环境中的实际安装版本。环境使用 Linux x86_64、Python 3.12.13 和 CUDA 12.8 运行时依赖。创建对应的 Python 环境后，在仓库根目录执行：
+
+    python -m pip install -r requirements-server.txt
+
+清单记录 Python 包及版本。GPU 驱动、FFmpeg 和硬件依赖按所用平台配置。
 
 源码基于本地 LeRobot 工作区的提交 e64fa667。保留 [LeRobot Apache-2.0 许可](LICENSE) 和 [LeWorldModel MIT 许可](src/lerobot/policies/le-wm-main/LICENSE)。各策略使用的预训练权重和数据可按各自上游项目的说明获取。
 
